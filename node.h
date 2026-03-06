@@ -1,7 +1,11 @@
+#ifndef NODE_H
+#define NODE_H
+
 #include "common.h"
 #include "Combatant.h"
 #include "User.h"
 #include <unordered_map>
+
 
 enum class NodeType {
     Story,
@@ -16,6 +20,8 @@ struct decision {
     int node_id;
 };
 
+
+
 class Node {
 public:
     int id;
@@ -26,6 +32,8 @@ public:
     virtual ~Node() = default;
     virtual Node* run( std::unordered_map<int, std::unique_ptr<Node>>& nodes, User& user) = 0;
 };
+
+void clear_screen();
 
 class StoryNode : public Node {
 public:
@@ -83,3 +91,6 @@ public:
 
     Node* run( std::unordered_map<int, std::unique_ptr<Node>>& nodes, User& user) override;
 };
+
+
+#endif
