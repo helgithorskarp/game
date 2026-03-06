@@ -16,8 +16,7 @@ public:
         return _actions;
     }
 
-    std::string do_action(Entity& other, int id) override {
-        Action action = _actions.at(id);  
+    std::string do_action(Entity& other, Action action) override {
         ActionResults results;
 
         if (action.type == Heal) {

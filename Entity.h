@@ -50,7 +50,7 @@ public:
     virtual vector<Action> actions() = 0;
 
     /// returns a string describing what kind of
-    virtual string do_action(Entity& other, int id) = 0;
+    virtual string do_action(Entity& other, Action action) = 0;
 
     virtual ~Entity() = default;  
 }; 

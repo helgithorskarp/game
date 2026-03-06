@@ -9,9 +9,6 @@
 bool fight_loop(User& userPlayer, Combatant& monster) {
     /// keeps looping until either one wins
     /// has to add logic for monster, like what move he should pick....
-
-
-
-    
+    /// add some cool ascii art with colors
     return true;
 }
