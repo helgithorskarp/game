@@ -37,7 +37,7 @@ public:
             {"Pointer Strike", "Precise low-level strike. 85% hit chance. Damage: 9-15.", Attack, 9, 6, 85},
             {"Template Smash", "Heavy templated swing. 70% hit chance. Damage: 14-20.", Attack, 14, 6, 70},
             {"Memory Management", "Recover lost health through discipline. Heal: 10-16.", Heal, 10, 6, 100}
-        }, character_names::nordic_sniper, character_id::nordic_sniper)
+        }, character_names::cpp_warrior, character_id::cpp_warrior)
     {}
 };
 
@@ -49,7 +49,7 @@ public:
             {"Longshot", "Precise rifle shot. 90% hit chance. Damage: 10-16.", Attack, 10, 6, 90},
             {"Headshot Attempt", "Carefully aimed shot. 65% hit chance. Damage: 16-24.", Attack, 16, 8, 65},
             {"Steady Breath", "Calm focus restores health. Heal: 8-14.", Heal, 8, 6, 100}
-        }, character_names::snowball_master, character_id::snowball_master)
+        }, character_names::nordic_sniper, character_id::nordic_sniper)
     {}
 };
 
