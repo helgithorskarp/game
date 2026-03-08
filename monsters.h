@@ -71,6 +71,19 @@ public:
         ) {}
 };
 
+class AnnoyingSeagull : public Combatant {
+public:
+    AnnoyingSeagull()
+        : Combatant(
+            50, 50, 5, "Annoying Seagull",
+            {
+                {"Peck", "Sharp beak jab. 90% hit chance. Damage: 6-10.", Attack, 6, 4, 90},
+                {"Deafening Screech", "Ear-splitting scream. 75% hit chance. Damage: 10-16.", Attack, 10, 6, 75},
+                {"Steal Snack", "Steals food and eats it. Heal: 6-12.", Heal, 6, 6, 100}
+            }
+        ) {}
+};
+
 
 /// THE BOSS FIGHT
 class Zyrax : public Combatant {

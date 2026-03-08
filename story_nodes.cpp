@@ -108,7 +108,7 @@ std::unordered_map<int, std::unique_ptr<Node>> get_story_map() {
     EvilClown evilClown;
     nodes[100] = make_unique<FightNode>(100, evilClown, 101, 99);
 
-    nodes[101] = make_unique<StoryNode>(101, 12, vector<string>{
+    nodes[101] = make_unique<StoryNode>(101, 102, vector<string>{
         "After defeating the Evil Clown,\n{PLAYER} is badly hurt and decides\nto rest in one of the ruined buildings\nto regain strength.",
 
         "After a good sleep in the abandoned building,\n{PLAYER} wakes up feeling stronger and continues the journey\nto defeat Zyrax."
@@ -118,10 +118,57 @@ std::unordered_map<int, std::unique_ptr<Node>> get_story_map() {
         102,
         vector<decision>{
             {"Search the nearby supply depot for useful equipment.", 103},
-            {"Continue forward toward Zyrax's fortress without stopping.", 12}
+            {"Continue forward toward Zyrax's fortress without stopping.", 105}
         },
         "Soon {PLAYER} reaches a damaged crossroads\njust outside the ruins.\nThe soldier must make another decision:"
     );
+
+    nodes[103] = make_unique<StoryNode>(103, 104, vector<string>{
+        "{PLAYER} decides to search the nearby supply depot\nfor anything useful.",
+
+        "Far away in the distance, {PLAYER} spots\nsomething unexpected... it looks like delicious food!",
+
+        "Curious and starving from the journey,\n{PLAYER} moves closer and finds a fresh plate of spaghetti.",
+
+        "Unable to resist, {PLAYER} takes a big bite.\nBut suddenly the food leaps into the air!",
+
+        "It twists and grows into a massive creature...\nIt's the Spaghetti Overlord!",
+
+        "BATTLE BEGINS!"
+    });
+
+    SpaghettiOverlord spaghettiOverlord;
+    nodes[104] = make_unique<FightNode>(104, spaghettiOverlord, 107, 103);
+
+    nodes[107] = make_unique<StoryNode>(107, 12, vector<string>{
+        "That was a close one! Spaghetti Overlord was\na tougher match than {PLAYER} expected.",
+
+        "The good news is that after killing him,\nthere were delicious spaghetti remains everywhere.",
+
+        "You eat some of it and continue your journey out of the city."
+    });
+
+
+    nodes[105] = make_unique<StoryNode>(105, 106, vector<string>{
+        "{PLAYER} believes that he needs to stop Zyrax\nas soon as possible. He has no time to waste!",
+
+        "After making it out of the ruined city, he feels\nthat he is finally getting closer to Zyrax's kingdom.",
+
+        "Suddenly you hear an annoying\nbut yet so familiar sound...\n\nSKRAAAA SKRAA SKRAAAAAA!!",
+
+        "A seagull lands right in front of {PLAYER},\nscreaming its lungs out.",
+
+        "{PLAYER} has hated seagulls all his life.\nThis one is no different.\nIn fact, this one might be the worst one yet.",
+
+        "Without hesitation, {PLAYER} decides\nthis seagull must die.",
+
+        "BATTLE BEGINS!"
+    });
+
+    AnnoyingSeagull annoyingSeagull;
+    nodes[106] = make_unique<FightNode>(106, annoyingSeagull, 12, 105);
+
+
 
     nodes[12] = make_unique<StoryNode>(12, 13, vector<string>{
         "Not far in the distance\nyou can see Zyrax's kingdom.\nIts dark towers rise above the horizon.",
