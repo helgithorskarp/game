@@ -39,7 +39,7 @@ DISCLAIMER: You must have GCC 13.0 or higher to execute the `make` command.
 # GAMEPLAY GUIDE
 "ZYRAX - Fall of Iceland" is a turn based JRPG in which you as the player have to defeat the evil overlord, ZYRAX.
 
-The player can choose their own name and pick from three warrior classes; C++ Warrior (a durable melee fighter), Nordic Sniper (a deadly marksman), or Snowball Master (a master of the frozen north). After creating their character, the player must navigate through the wastes of the planet Vorthar, encountering a variety of monsters and experiencing a dynamic story depending on which path you pick to ultimately reach ZYRAX.
+The player can choose their own name and pick from three warrior classes; C++ Warrior (a durable melee fighter), Nordic Sniper (a deadly marksman), or Snowball Master (a master of the frozen north). After creating their character, the player must navigate through the wastes of the planet Vorthar by choosing what path to follow, encountering a variety of monsters and experiencing a dynamic story depending on which path you pick to ultimately reach ZYRAX.
 
 When the player encounters an enemy, they enter a turn based battle with the opponent. The player has a selection of three different moves, which vary between each of the three starting classes. Each move has a different chance to connect, with higher damage moves usually being harder to hit (this principe applies to the player as well as the enemies). After winning a battle, the player becomes more experienced and gains an additional level. This increases their overall damage and max health.
 
