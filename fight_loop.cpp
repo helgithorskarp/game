@@ -64,6 +64,7 @@ bool fight_loop(User &userPlayer, Combatant &monster) {
       std::getline(std::cin, input);
       userPlayer.health = userPlayer.max_health;
 
+      userPlayer.level += 1;
       return true;
     }
 

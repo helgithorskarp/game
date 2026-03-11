@@ -22,11 +22,9 @@ public:
     User(string name, std::vector<Action> actions, string character_name, string character_id)
         : Combatant(
             100, 100, 15, name, actions
-        ), character_name(character_name), character_id(character_id) {}
+        ), character_name(character_name), character_id(character_id) {level = 1;}
 
     int current_node = 0; /// stores where we are so we can quickly store old progress
-    int level = 1; // for each level 10% more damage
-    float damage_increase = 1.1;
     string character_id;
     string character_name;
 };
@@ -36,11 +34,11 @@ class cpp_warrior : public User {
 public:
     cpp_warrior(std::string name)
         : User(name, {
-            {"Pointer Strike", "Precise low-level strike. 85% hit chance. Damage: 9-15.", Attack, 9, 6, 85},
-            {"Template Smash", "Heavy templated swing. 70% hit chance. Damage: 14-20.", Attack, 14, 6, 70},
+            {"Pointer Strike", "Precise low-level strike. 85% hit chance. Good amunt of damage!", Attack, 9, 6, 85},
+            {"Template Smash", "Heavy templated swing. 70% hit chance. Legendary damage, low hit rate!", Attack, 14, 6, 70},
             {"Memory Management", "Recover lost health through discipline. Heal: 10-16.", Heal, 10, 6, 100}
         }, character_names::cpp_warrior, character_id::cpp_warrior)
-    {}
+    {level = 1;}
 };
 
 
@@ -48,11 +46,11 @@ class nordic_sniper : public User {
 public:
     nordic_sniper(std::string name)
         : User(name, {
-            {"Longshot", "Precise rifle shot. 90% hit chance. Damage: 10-16.", Attack, 10, 6, 90},
-            {"Headshot Attempt", "Carefully aimed shot. 65% hit chance. Damage: 16-24.", Attack, 16, 8, 65},
-            {"Steady Breath", "Calm focus restores health. Heal: 8-14.", Heal, 8, 6, 100}
+            {"Longshot", "Precise rifle shot. 90% hit chance. Does good amount of damage!", Attack, 10, 6, 90},
+            {"Headshot Attempt", "Carefully aimed shot. 65% hit chance. low accuracy, INSANE damage", Attack, 16, 8, 65},
+            {"Steady Breath", "Calm focus restores health.", Heal, 8, 6, 100}
         }, character_names::nordic_sniper, character_id::nordic_sniper)
-    {}
+    {level = 1;}
 };
 
 
@@ -60,11 +58,11 @@ class snowball_master : public User {
 public:
     snowball_master(std::string name)
         : User(name, {
-            {"Packed Snowball", "Tightly packed snowball throw. 85% hit chance. Damage: 8-14.", Attack, 8, 6, 85},
-            {"Frozen Barrage", "Rapid volley of icy snowballs. 75% hit chance. Damage: 12-18.", Attack, 12, 6, 75},
-            {"Cold Recovery", "Draw strength from the cold. Heal: 10-18.", Heal, 10, 8, 100}
+            {"Packed Snowball", "Tightly packed snowball throw. 85% hit chance. Decent amount of damage.", Attack, 8, 6, 85},
+            {"Frozen Barrage", "Rapid volley of icy snowballs. 75% hit chance. Low hit rate, GREAT damage.", Attack, 12, 6, 75},
+            {"Cold Recovery", "Draw strength and heal up from the cold.", Heal, 10, 8, 100}
         }, character_names::snowball_master, character_id::snowball_master)
-    {}
+    {level = 1;}
 };
 
 #endif 

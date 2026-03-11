@@ -1,14 +1,14 @@
 level up system end of fight loop show menu
 
-fix action description
+fix action description DONE
 
 refine fight loop results
 
 good readme
 
-make armor acutally work + show in fight loop
+make armor acutally work + show in fight loop /// DONE , but still not shown in fight loop
 
-apply damage formula in do_action, using current level.
+apply damage formula in do_action, using current level. // DONE
 
 ascii art fightloop
 
