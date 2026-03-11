@@ -25,3 +25,19 @@ end boss fight
 different enemies with different action types
 ascii menus rich UI, even though fight loop can maybe be added
 more stats (armor)
+
+
+==OFFICIAL README BEGINS HERE==
+
+1. Player Manual
+
+
+
+
+
+
+
+
+
+
+
