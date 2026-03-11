@@ -48,7 +48,8 @@ bool fight_loop(User &userPlayer, Combatant &monster) {
       int choice = std::stoi(input);
 
       if (choice > 0 && choice <= p_actions.size()) {
-        p_result = userPlayer.do_action(monster, p_actions[choice - 1]);
+        ActionReturn res = userPlayer.do_action(monster, p_actions[choice - 1]);
+        p_result = res.description;
       } else {
         p_result = "You hesitated and lost your turn!";
       }
@@ -61,19 +62,24 @@ bool fight_loop(User &userPlayer, Combatant &monster) {
       print_combat_header(userPlayer, monster);
       std::cout << "\nVictory! " << monster.name << " has been defeated.\n";
       std::getline(std::cin, input);
+      userPlayer.health = userPlayer.max_health;
+
       return true;
     }
 
     std::vector<Action> m_actions = monster.actions();
     int enemy_idx = rand() % m_actions.size();
 
-    m_result = monster.do_action(userPlayer, m_actions[enemy_idx]);
+    ActionReturn _Result = monster.do_action(userPlayer, m_actions[enemy_idx]);
+    m_result = _Result.description;
 
     if (!userPlayer.is_alive()) {
       system("clear");
       print_combat_header(userPlayer, monster);
       std::cout << "\nYou have fallen in battle...\n";
       std::getline(std::cin, input);
+      userPlayer.health = userPlayer.max_health;
+      monster.health = monster.max_health;
       return false;
     }
   }

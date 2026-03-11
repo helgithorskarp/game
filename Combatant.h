@@ -16,7 +16,7 @@ public:
         return _actions;
     }
 
-    std::string do_action(Entity& other, Action action) override {
+    ActionReturn do_action(Entity& other, Action action) override {
         ActionResults results;
 
         if (action.type == Heal) {
@@ -25,7 +25,12 @@ public:
             results = do_attack(other, action);
         }
 
-        return get_action_description(results, action, *this);
+        ActionReturn returnItem;
+        returnItem.description = get_action_description(results, action, *this);
+        returnItem.results = results;
+
+
+        return returnItem;
     }
 };
 

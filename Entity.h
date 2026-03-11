@@ -24,6 +24,10 @@ struct ActionResults {
     int amount;
 };
 
+struct ActionReturn {
+    string description;
+    ActionResults results;
+};
 
 
 class Entity {
@@ -50,7 +54,7 @@ public:
     virtual vector<Action> actions() = 0;
 
     /// returns a string describing what kind of
-    virtual string do_action(Entity& other, Action action) = 0;
+    virtual ActionReturn do_action(Entity& other, Action action) = 0;
 
     virtual ~Entity() = default;  
 }; 

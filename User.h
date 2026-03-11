@@ -25,6 +25,8 @@ public:
         ), character_name(character_name), character_id(character_id) {}
 
     int current_node = 0; /// stores where we are so we can quickly store old progress
+    int level = 1; // for each level 10% more damage
+    float damage_increase = 1.1;
     string character_id;
     string character_name;
 };
