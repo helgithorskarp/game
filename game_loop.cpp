@@ -8,6 +8,7 @@ int main(void) {
     string name;
     string character_choice;
     int node_id = 0; /// optional but for stored games they might overwrite the starting point
+    int level = 1; /// optional but if its a loaded game, store the level player was at
 
     while (!setup_complete) {
         string user_asnwer;
@@ -30,7 +31,10 @@ int main(void) {
             name = game->name;
             character_choice = game->character_id;
             node_id = game->node_id;
+            level = game->level;
             setup_complete = true;
+        } else if (user_asnwer == "q") {
+            return 0;
         }
     }
     clear_screen();
@@ -42,6 +46,7 @@ int main(void) {
 
     User& user = *user_ptr;
     user.current_node = node_id;
+    user.level = level;
 
 
     /// this is a map where the id is a node id and the node is either a story node, fight node...
@@ -130,6 +135,9 @@ std::optional<saved_game> get_saved_game() {
         std::string character_id;
         std::getline(ss, character_id, ';');
 
+        std::string level;
+        std::getline(ss, level, ';');
+
         std::string time;
         std::getline(ss, time);
 
@@ -138,6 +146,7 @@ std::optional<saved_game> get_saved_game() {
         game.character_type_name = character_name;
         game.date = time;
         game.name = name;
+        game.level = std::stoi(level);
         game.node_id = std::stoi(node_id);
 
 

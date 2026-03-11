@@ -13,9 +13,9 @@ std::unordered_map<int, std::unique_ptr<Node>> get_story_map() {
     nodes[0] = make_unique<StoryNode>(0, 1, vector<string>{
         "An evil alien known as Zyrax arrived on Earth.\nSearching for a place to conquer and rule,\nhe chose an island of his liking — Iceland.",
 
-        "Without warning, Zyrax ripped Iceland from\nthe Earth itself and transported it across\nthe stars to his dark planet Vorthar.\nThe land was no longer the same.\nIceland had been torn away from everything\nit once knew and placed in a hostile world\nwhere there was no safety, no prosperity,\nand danger lurked everywhere.",
+        "Without warning, Zyrax ripped Iceland from\nthe Earth and moved it across\nthe stars to his dark planet Vorthar.\nThe land was no longer the same.\nIceland had been torn away from everything\nit once knew and placed in a horrible world\nwhere there was no safety, no prosperity,\nand danger was everywhere.",
 
-        "Strange creatures roamed the landscape.\nThe skies were darker. The people lived in fear.\nNow a hero must rise and fight through\nthe creatures of Vorthar, defeat Zyrax,\nand free Iceland from the alien planet\nbefore it is lost forever."
+        "Strange creatures roamed the landscape.\nThe skies were much darker. The people lived in alot of fear.\nNow a hero must rise and fight through\nthe creatures of Vorthar, defeat Zyrax,\nand free Iceland from the alien planet\nbefore it will be lost forever."
     });
 
     /// setup here inbetween to set up user name and such who is playing
@@ -23,9 +23,9 @@ std::unordered_map<int, std::unique_ptr<Node>> get_story_map() {
     nodes[1] = make_unique<StoryNode>(1, 2, vector<string>{
         "A brave warrior named {PLAYER} steps forward.\nWhile many feared the alien conqueror Zyrax,\nthis warrior refuses to stand by while Iceland\nsuffers on the dark planet Vorthar.",
 
-        "Determined to free the island and its people,\n{PLAYER} sets out on a dangerous journey\nto confront Zyrax and his growing army\nof alien creatures. But the path will not be easy.",
+        "Determined to free the island and its people,\n{PLAYER} sets out on a dangerous journey\nto confront Zyrax and his growing army\nof aliens. But the path will not be easy.",
 
-        "Strange monsters roam the land,\ntwisted by the energy of Vorthar.\nBefore reaching Zyrax himself,\nthe hero must survive the many dangers\nthat guard his fortress."
+        "Strange monsters roam the land,\nBefore reaching Zyrax himself,\nthe hero must survive the many dangers that are in Iceland."
     });
 
     nodes[2] = make_unique<DecisionNode>(
@@ -37,17 +37,16 @@ std::unordered_map<int, std::unique_ptr<Node>> get_story_map() {
         "While searching for Zyrax, {PLAYER} reaches a fork in the path.\n"
         "One road leads through the ruined city. It is the shorter route, but it is\n"
         "far more dangerous and likely filled with Zyrax's creatures.\n"
-        "The other path leads through the dark forest. It will take longer, but it\n"
-        "may be safer and avoids the worst of the enemy forces.\n"
+        "The other path leads through the dark forest. It will take longer, but it may be safer\n"
         "The soldier must decide:"
     );
 
     nodes[4] = make_unique<StoryNode>(4, 5, vector<string>{
         "The player decides to take the safer path\nand walk through the forest.",
 
-        "{PLAYER} spends hours wandering through\nthe dense trees trying to find the way forward,\nslowly losing health due to exhaustion.",
+        "{PLAYER} spends hours wandering through\nthe trees trying to find the way forward,\nslowly losing health due to exhaustion.",
 
-        "Suddenly, a large creature emerges\nfrom the shadows. It is part of Zyrax's army —\nthe Snake Man.",
+        "Suddenly, a large creature emerges\nfrom the shadows. It is part of Zyrax's army, the Snake Man.",
 
         "The creature hisses and prepares to attack.",
         "BATTLE BEGINS!"
@@ -80,11 +79,11 @@ std::unordered_map<int, std::unique_ptr<Node>> get_story_map() {
     });
 
     nodes[8] = make_unique<StoryNode>(8, 11, vector<string>{
-        "You slowly open the door and step outside\nto investigate the strange noise.\nThe cold night air hits your face\nas you carefully look around\nthe dark forest,\ntrying to see what could have made the sound.",
+        "You slowly open the door and step outside\nto investigate the strange noise.\n You feel something weird, like somebody is watching you.\nas you carefully look around the dark forest,\ntrying to see what could have made the sound.",
 
-        "Suddenly the old lady appears behind you,\nlaughing loudly.\nIn that moment you realize she was never\nan ordinary old lady at all —\nshe is the evil Witch of the Forest.",
+        "Suddenly the old lady appears behind you,\nlaughing really loudly.\nIn that moment you realize she was never\nan ordinary old lady at all \nshe is the evil Witch of the Forest.",
 
-        "Before you can react,\nthe witch raises her hands\nand prepares to strike.",
+        "Before you can react,\nthe witch raises her hands\nand prepares a strike on you.",
 
         "BATTLE BEGINS!"
     });
@@ -99,7 +98,7 @@ std::unordered_map<int, std::unique_ptr<Node>> get_story_map() {
     nodes[99] = make_unique<StoryNode>(99, 100, vector<string>{
         "The player decides to wander\ninto the ruined city.\nAs the soldier walks through the empty streets,\nhe is shocked by how destroyed everything looks.",
 
-        "Suddenly, a large figure jumps down\nfrom a ruined building and lands in front of him.\nIt is one of Zyrax's warriors... the Evil Clown.",
+        "Suddenly, a large man jumps down\nfrom a ruined building and lands in front of him.\nIt is one of Zyrax's warriors... the Evil Clown.",
 
         "\"I have heard about your attempts to stop the king,\"\nhe laughs.\"I'm not going to let you do that!\"\nThe Evil Clown attacks!",
         "BATTLE BEGINS!"
@@ -120,7 +119,7 @@ std::unordered_map<int, std::unique_ptr<Node>> get_story_map() {
             {"Search the nearby supply depot for useful equipment.", 103},
             {"Continue forward toward Zyrax's fortress without stopping.", 105}
         },
-        "Soon {PLAYER} reaches a damaged crossroads\njust outside the ruins.\nThe soldier must make another decision:"
+        "Soon {PLAYER} reaches a place where he is unsure where to go\n{PLAYER} must make another decision:"
     );
 
     nodes[103] = make_unique<StoryNode>(103, 104, vector<string>{
@@ -128,11 +127,11 @@ std::unordered_map<int, std::unique_ptr<Node>> get_story_map() {
 
         "Far away in the distance, {PLAYER} spots\nsomething unexpected... it looks like delicious food!",
 
-        "Curious and starving from the journey,\n{PLAYER} moves closer and finds a fresh plate of spaghetti.",
+        "Curious and really hungry from the journey,\n{PLAYER} moves closer and finds a fresh plate of spaghetti.",
 
-        "Unable to resist, {PLAYER} takes a big bite.\nBut suddenly the food leaps into the air!",
+        "Unable to resist, {PLAYER} takes a big bite.\nBut suddenly the food jumps into the air!",
 
-        "It twists and grows into a massive creature...\nIt's the Spaghetti Overlord!",
+        "It spins and grows into a massive creature...\nIt is the Spaghetti Overlord!",
 
         "BATTLE BEGINS!"
     });
@@ -156,11 +155,11 @@ std::unordered_map<int, std::unique_ptr<Node>> get_story_map() {
 
         "Suddenly you hear an annoying\nbut yet so familiar sound...\n\nSKRAAAA SKRAA SKRAAAAAA!!",
 
-        "A seagull lands right in front of {PLAYER},\nscreaming its lungs out.",
+        "A seagull lands right in front of {PLAYER},\nscreaming painfully loud.",
 
         "{PLAYER} has hated seagulls all his life.\nThis one is no different.\nIn fact, this one might be the worst one yet.",
 
-        "Without hesitation, {PLAYER} decides\nthis seagull must die.",
+        "{PLAYER} decides this seagull must die.",
 
         "BATTLE BEGINS!"
     });
@@ -177,9 +176,9 @@ std::unordered_map<int, std::unique_ptr<Node>> get_story_map() {
 
         "A guard stands at the only entrance.\nHe quickly notices you and runs toward you,\nblocking your path.",
 
-        "\"Halt!\" he shouts.\n\"None may enter Zyrax's kingdom\nwhile I stand guard!\"\nHe raises his weapon and smirks.",
+        "\"STOP!\" he shouts.\n\"No one will enter Zyrax's kingdom\nwhile I guard it!\"\nHe raises his weapon and laughs.",
 
-        "\"I am Drakthar,\nthe Guardian of the Gate.\nIf you wish to pass…\nyou must defeat me!\"",
+        "\"I am Drakthar,\nthe Guardian of the Gate.\nIf you wnat to pass…\nyou must KILL me!\"",
 
         "BATTLE BEGINS!"
     });
@@ -190,7 +189,7 @@ std::unordered_map<int, std::unique_ptr<Node>> get_story_map() {
     nodes[14] = make_unique<StoryNode>(14, 15, vector<string>{
         "After defeating Drakthar,\nthe Guardian of the Gate,\nyou make your way into Zyrax's kingdom.\nThe dark towers surround you\nas you step deeper into the fortress\nthat has held Iceland captive\non the alien world of Vorthar.",
 
-        "There he is —\nthe being who stole the country you love.\nZyrax stands before you,\nwatching calmly as if he has been expecting\nthis moment all along.",
+        "There he is \nthe being who stole the country you love.\nZyrax stands right in front of you,\nwatching calmly as if he has been expecting\nthis moment all along.",
 
         "This is your chance.\nThe fate of Iceland now rests on your shoulders.\n\nBOSS FIGHT."
     });
@@ -199,7 +198,7 @@ std::unordered_map<int, std::unique_ptr<Node>> get_story_map() {
     nodes[15] = make_unique<FightNode>(15, zyrax, 16, 14);
 
     nodes[16] = make_unique<EndNode>(16, vector<string>{
-        "With Zyrax finally defeated,\nthe dark ruler of Vorthar collapses\nto the ground.\nHis army scatters across the planet\nand the dark fortress grows silent.",
+        "With Zyrax finally defeated,\nthe dark ruler of Vorthar collapses\nto the ground.\nHis army all run away scared of you",
 
         "You search the fortress and soon discover\nthat the President of Iceland,\nHalla Tómasdóttir,\nhas been imprisoned in a guarded cell.\nAfter freeing her,\nyou both begin planning\nhow to return Iceland back to Earth.",
 
