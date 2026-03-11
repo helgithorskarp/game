@@ -35,6 +35,9 @@ public:
     int health;
     int max_health;
     int armor;
+    int level;
+    float damage_level_multiplier = 1.20;
+    float defence_level_multplier = 1.15;
     std::string name;   
 
     Entity(int h, int mh, int a, std::string n)
@@ -43,7 +46,17 @@ public:
     bool is_alive() { return health > 0; }
 
     void take_dmg(int dmg) { 
-        health = std::max(0, health - dmg);  
+        int oldArmor = armor;
+        
+        /// if armor is greater than 0 start by taking away armor
+        if (armor > 0) {
+            armor = std::max(0, armor - dmg);
+        }
+
+        /// if armor is at 0, take the rest away from the real health
+        if (armor == 0) {
+            health = std::max(0, health - (dmg - oldArmor)); 
+        } 
     }
 
     void heal(int amount) { 

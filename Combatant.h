@@ -22,7 +22,7 @@ public:
         if (action.type == Heal) {
             results = do_heal(*this, action);
         } else if (action.type == Attack) {
-            results = do_attack(other, action);
+            results = do_attack(other, *this, action);
         }
 
         ActionReturn returnItem;

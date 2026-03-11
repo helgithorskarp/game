@@ -11,6 +11,7 @@ struct saved_game {
     string character_type_name;
     string character_id;
     string name;
+    int level;
     int node_id;
 };
 
@@ -35,6 +36,7 @@ inline const string welcome_screen = R"(
 
         [ 1 ]  NEW  GAME
         [ 2 ]  LOAD GAME
+        [ q ]  QUIT
 
 ============================================================================
 
