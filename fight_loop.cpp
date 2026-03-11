@@ -2,30 +2,35 @@
 /// returns true if user wins, false if user looses
 #include "fight_loop.h"
 
+void print_combat_result(string result) {
+  if (!result.empty()) {
+    std::cout << ">> " << result << "\n";
+  }
+}
+
+void print_combat_header(User &userPlayer, Combatant &monster) {
+  std::cout << "\n--- " << userPlayer.name << " vs " << monster.name
+            << " ---\n";
+  std::cout << userPlayer.name << " HP: " << userPlayer.health << "/"
+            << userPlayer.max_health << "\n";
+  std::cout << monster.name << " HP: " << monster.health << "/"
+            << monster.max_health << "\n";
+  std::cout << "------------------------------------------\n";
+}
+
 bool fight_loop(User &userPlayer, Combatant &monster) {
   string m_result = "";
   string p_result = "";
+
   std::vector<Action> m_actions = monster.actions();
   std::vector<Action> p_actions = userPlayer.actions();
 
   while (userPlayer.is_alive() && monster.is_alive()) {
     system("clear");
+    print_combat_result(p_result);
+    print_combat_result(m_result);
 
-    if (!p_result.empty()) {
-      std::cout << "\n>> " << p_result << "\n\n";
-    }
-
-    if (!m_result.empty()) {
-      std::cout << ">> " << m_result << "\n";
-    }
-
-    std::cout << "\n--- " << userPlayer.name << " vs " << monster.name
-              << " ---\n";
-    std::cout << userPlayer.name << " HP: " << userPlayer.health << "/"
-              << userPlayer.max_health << "\n";
-    std::cout << monster.name << " HP: " << monster.health << "/"
-              << monster.max_health << "\n";
-    std::cout << "------------------------------------------\n";
+    print_combat_header(userPlayer, monster);
 
     for (int i = 0; i < p_actions.size(); ++i) {
       std::cout << "[" << i + 1 << "] " << p_actions[i].name << " ("
@@ -52,7 +57,10 @@ bool fight_loop(User &userPlayer, Combatant &monster) {
     }
 
     if (!monster.is_alive()) {
+      system("clear");
+      print_combat_header(userPlayer, monster);
       std::cout << "\nVictory! " << monster.name << " has been defeated.\n";
+      std::getline(std::cin, input);
       return true;
     }
 
@@ -62,7 +70,10 @@ bool fight_loop(User &userPlayer, Combatant &monster) {
     m_result = monster.do_action(userPlayer, m_actions[enemy_idx]);
 
     if (!userPlayer.is_alive()) {
+      system("clear");
+      print_combat_header(userPlayer, monster);
       std::cout << "\nYou have fallen in battle...\n";
+      std::getline(std::cin, input);
       return false;
     }
   }
