@@ -32,8 +32,6 @@ more stats (armor)
 # HOW TO RUN
 To run the program you need to navigate to the folder containing the game and run the command `make`. Then, after the game has been set up, you must run `./game` and the game will start!
 
-DISCLAIMER: You must have GCC 13.0 or higher to execute the `make` command.
-
 
 
 # GAMEPLAY GUIDE
@@ -44,6 +42,8 @@ The player can choose their own name and pick from three warrior classes; C++ Wa
 When the player encounters an enemy, they enter a turn based battle with the opponent. The player has a selection of three different moves, which vary between each of the three starting classes. Each move has a different chance to connect, with higher damage moves usually being harder to hit (this principe applies to the player as well as the enemies). After winning a battle, the player becomes more experienced and gains an additional level. This increases their overall damage and max health.
 
 When out of combat, the player can quit and choose to save or not. If the player chooses to save and exit the game, they can enter the game again and choose to load the save instead of starting a new game, returning them to the same point in the game.
+
+## Alex explain fighting sequence.. and the idea behind it
 
 
 # EXTRA FEATURES
