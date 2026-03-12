@@ -1,4 +1,4 @@
-level up system end of fight loop show menu
+level up system end of fight loop show menu, show cool menu congratualting for leveling up, and stuff...
 
 fix action description DONE
 
@@ -6,11 +6,12 @@ refine fight loop results
 
 good readme
 
-make armor acutally work + show in fight loop /// DONE , but still not shown in fight loop
+make armor acutally work + show armor in fight loop /// DONE , but still not shown in fight loop
 
 apply damage formula in do_action, using current level. // DONE
 
 ascii art fightloop
+
 
 rebalance monster random choices
 
