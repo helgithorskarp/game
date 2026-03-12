@@ -12,6 +12,8 @@ apply damage formula in do_action, using current level. // DONE
 
 ascii art fightloop
 
+Add in fight loop that after each win max health increases by 5 or something
+
 
 rebalance monster random choices
 
