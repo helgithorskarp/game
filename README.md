@@ -1,35 +1,3 @@
-level up system end of fight loop show menu, show cool menu congratualting for leveling up, and stuff...
-
-fix action description DONE
-
-refine fight loop results
-
-good readme
-
-make armor acutally work + show armor in fight loop /// DONE , but still not shown in fight loop
-
-apply damage formula in do_action, using current level. // DONE
-
-ascii art fightloop
-
-Add in fight loop that after each win max health increases by 5 or something
-
-
-rebalance monster random choices
-
-
-EXTRA FEATURES
-
-save game
-leveling up system
-story decision game, where story is built with tree, where you can make decisions and fight different monsters based on them
-choose a starter class with different attibutes and names
-end boss fight
-different enemies with different action types
-ascii menus rich UI, even though fight loop can maybe be added
-more stats (armor)
-
-
 ==OFFICIAL README BEGINS HERE==
 
 # HOW TO RUN
@@ -42,11 +10,9 @@ To run the program you need to navigate to the folder containing the game and ru
 
 The player can choose their own name and pick from three warrior classes; C++ Warrior (a durable melee fighter), Nordic Sniper (a deadly marksman), or Snowball Master (a master of the frozen north). After creating their character, the player must navigate through the wastes of the planet Vorthar by choosing what path to follow, encountering a variety of monsters and experiencing a dynamic story depending on which path you pick to ultimately reach ZYRAX.
 
-When the player encounters an enemy, they enter a turn based battle with the opponent. The player has a selection of three different moves, which vary between each of the three starting classes. Each move has a different chance to connect, with higher damage moves usually being harder to hit (this principe applies to the player as well as the enemies). After winning a battle, the player becomes more experienced and gains an additional level. This increases their overall damage and defense.
+When the player encounters an enemy, they enter a turn based battle with the opponent. The player has a selection of three different moves, which vary between each of the three starting classes. Each move has a different chance to connect, with higher damage moves usually being harder to hit (this principe applies to the player as well as the enemies). After winning a battle, the player becomes more experienced and gains an additional level and increased maximum health. They get increased overall damage and defense. If the player loses, they can choose to continue from a previous checkpoint. The player can also peer into the details of the enemy they're fighting.
 
 When out of combat, the player can quit and choose to save or not. If the player chooses to save and exit the game, they can enter the game again and choose to load the save instead of starting a new game, returning them to the same point in the game.
-
-## Alex explain fighting sequence.. and the idea behind it
 
 
 # EXTRA FEATURES
@@ -83,7 +49,7 @@ The `entity.h` file defines the abstract class that all players (users and monst
 `combatant.h` defines the class that inherits from the `Entity` class. This class implements the `do_action` function. Monsters and users inherit from this class and store their own special actions. The `do_action()` function calls functions in `action_logic.cpp`, which ultimately apply the healing/damage.
 
 `monsters.h` and `user.h` implement the classes that inherit from `Combatant`. Each monster/user declares its own set of special actions, how much damage they do, range, hit rate, etc.
-The `fight_loop` file implements the whole fighting scene. It takes in two references to entities (user and a monster) and repeatedly prompts the user for an action, applies the action (calling the `do_action` function mentioned above), until either the monster or the user dies. When a user wins a fight, their health is reset and they increase in level.
+The `fight_loop` file implements the whole fighting scene. It takes in two references to entities (user and a monster) and repeatedly prompts the user for an action, applies the action (calling the `do_action` function mentioned above), until either the monster or the user dies. When a user wins a fight, their health is kept for future fights, or healed if very low, and their level and max health increase. The monster logic is very simple, randomly choosing an attack but is guaranteed to heal every 3rd round to incentivize strategy.
 
 ---
 
@@ -122,3 +88,37 @@ At each run, as you can see in the extra features, you can store the results. Th
 
 
 `game_loop.cpp` has the `main()` function of this program. The logic there is printing the base menu, allowing the user to either start a new game or load an old game. If an old game is loaded it reads all entries from the storage file and allows the user to choose. After all of this, the game loop shown above takes place.
+
+<details>
+    <summary>Notes for authors, please ignore</summary>
+level up system end of fight loop show menu, show cool menu congratualting for leveling up, and stuff...
+
+fix action description DONE
+
+refine fight loop results
+
+good readme
+
+make armor acutally work + show armor in fight loop /// DONE , but still not shown in fight loop
+
+apply damage formula in do_action, using current level. // DONE
+
+ascii art fightloop
+
+Add in fight loop that after each win max health increases by 5 or something
+
+
+rebalance monster random choices
+
+
+EXTRA FEATURES
+
+save game
+leveling up system
+story decision game, where story is built with tree, where you can make decisions and fight different monsters based on them
+choose a starter class with different attibutes and names
+end boss fight
+different enemies with different action types
+ascii menus rich UI, even though fight loop can maybe be added
+more stats (armor)
+</details>
