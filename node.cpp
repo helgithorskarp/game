@@ -33,7 +33,7 @@ void input_name(string& text, const string& name) {
 Node* StoryNode::run(std::unordered_map<int, std::unique_ptr<Node>>& nodes, User& user) {
     clear_screen();
     std::cout << Header;
-    std::cout << "Name: " << user.name << ", Health: " << user.health << "/" << user.max_health << ", Level: " << user.level << "\n";
+    std::cout << "Name: " << user.name << ", Health: " << user.health << "/" << user.max_health << " Armor: " << user.armor << ", Level: " << user.level << "\n";
     std::cout << "Press ENTER to continue the Story, or q to quit\n\n";
     for (auto& line : text) {
         input_name(line, user.name);

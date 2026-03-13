@@ -28,7 +28,7 @@ In each game you can quit manually and save your game. When you load up the game
 
 ## Starter Classes and Special Attributes
 
-Each user can choose between a couple of starter classes in the beginning of the game. Each has different strengths and weaknesses. Also, all entities have their own special set of attributes with different sets of actions.
+Each user can choose between a couple of starter classes in the beginning of the game. Each has different strengths and weaknesses. Also, all entities have their own special set of attributes with different sets of actions. During each game you can see the special attributes of the enemy!
 
 ## Richer Menu UI
 
@@ -93,36 +93,7 @@ At each run, as you can see in the extra features, you can store the results. Th
 
 `game_loop.cpp` has the `main()` function of this program. The logic there is printing the base menu, allowing the user to either start a new game or load an old game. If an old game is loaded it reads all entries from the storage file and allows the user to choose. After all of this, the game loop shown above takes place.
 
-<details>
-    <summary>Notes for authors, please ignore</summary>
-level up system end of fight loop show menu, show cool menu congratualting for leveling up, and stuff...
 
-fix action description DONE
+## Battle fight logic
 
-refine fight loop results
-
-good readme
-
-make armor acutally work + show armor in fight loop /// DONE , but still not shown in fight loop
-
-apply damage formula in do_action, using current level. // DONE
-
-ascii art fightloop
-
-Add in fight loop that after each win max health increases by 5 or something
-
-
-rebalance monster random choices
-
-
-EXTRA FEATURES
-
-save game
-leveling up system
-story decision game, where story is built with tree, where you can make decisions and fight different monsters based on them
-choose a starter class with different attibutes and names
-end boss fight
-different enemies with different action types
-ascii menus rich UI, even though fight loop can maybe be added
-more stats (armor)
-</details>
+The `fight_loop` function takes in a reference to the user and a monster and runs the battle until one of them dies. On each turn, the player is prompted to choose an action from their action list. The chosen action is passed to `do_action()` in `Combatant.h`, which calls either `do_attack()` or `do_heal()` in `action_logic.cpp`. These functions calculate the final damage or healing amount based on the action's base amount, a random range roll, and the level multipliers of both entities. The monster then takes its turn with a simple AI. It picks a random action but is guaranteed to heal every 3rd round. If the player wins, their level and max health increase. If they lose, they are returned to the start of the fight and their health is reset to what it was before the battle began.

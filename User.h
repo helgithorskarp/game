@@ -34,7 +34,7 @@ class cpp_warrior : public User {
 public:
     cpp_warrior(std::string name)
         : User(name, {
-            {"Pointer Strike", "Precise low-level strike. 85% hit chance. Good amunt of damage!", Attack, 9, 6, 85},
+            {"Pointer Strike", "Precise low-level strike. 85% hit chance. Good amount of damage!", Attack, 9, 6, 85},
             {"Template Smash", "Heavy templated swing. 70% hit chance. Legendary damage, low hit rate!", Attack, 14, 6, 70},
             {"Memory Management", "Recover lost health through discipline. Heal: 10-16.", Heal, 10, 6, 100}
         }, character_names::cpp_warrior, character_id::cpp_warrior)

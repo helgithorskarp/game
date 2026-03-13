@@ -11,9 +11,9 @@ void print_combat_header(User &userPlayer, Combatant &monster) {
   std::cout << "\n======== " << userPlayer.name << " vs " << monster.name
             << " ========\n\n";
   std::cout << userPlayer.name << " HP: " << userPlayer.health << "/"
-            << userPlayer.max_health << "\n";
+            << userPlayer.max_health <<  " Armor: " << userPlayer.armor << "\n";
   std::cout << monster.name << " HP: " << monster.health << "/"
-            << monster.max_health << "\n\n";
+            << monster.max_health <<  " Armor: " << monster.armor << "\n\n";
   std::cout << "====================================================\n\n";
 }
 
